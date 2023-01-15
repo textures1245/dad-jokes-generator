@@ -12,7 +12,9 @@
     "@dicebear/collection": "^5.0.2",
     "@dicebear/core": "^5.0.2",
     "@popperjs/core": "^2.11.6",
+    "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
+    "contrast-js": "^0.0.3",
     "vue": "^3.2.45"
   },
   "devDependencies": {

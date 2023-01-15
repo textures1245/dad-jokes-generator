@@ -1,8 +1,7 @@
 import { createApp } from "vue";
 import "./style.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap";
-import "bootstrap/scss/mixins/_breakpoints.scss";
+import 'bootstrap/dist/js/bootstrap'
 
 import App from "./App.vue";
 

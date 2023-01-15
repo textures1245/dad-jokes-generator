@@ -1,33 +1,28 @@
 <script>
-import MOCK_NAME_DATA from "../assets/MOCK_JSON/MOCK_DATA.json";
-
-export default {
-  data() {
-    return {
-      name: MOCK_NAME_DATA[Math.floor(Math.random() * 10)]["first_name"],
-    };
-  },
-};
 </script>
 
 <script setup>
-import { createAvatar } from "@dicebear/core";
-import { bigSmile } from "@dicebear/collection";
+import MOCK_NAME_DATA from "../assets/MOCK_JSON/MOCK_DATA.json";
+const avatarApi = "https://api.dicebear.com/5.x/big-smile/png?seed=";
+let name = null;
+const genSeeds = () => {
+  name = MOCK_NAME_DATA[Math.floor(Math.random() * 100)]["first_name"];
+  return avatarApi + name;
+};
 
-const avatarUrl = () => {};
+const desc = `
+  Applcation name: Dadjokes Generator
+  Application playground:
+  **ผลงานชี้นนี้จำทำเพื่อเสนออาจาร์ย อาจารย์อรรถวิท ชังคมานนท์ รายวิชาการพัฒนาโปรแกรมประยุกต์บนเว็บ**`;
 </script>
 
 <template>
   <nav>
-    <nav class="rounded container-lg navbar navbar-light bg-e7e7e7">
+    <nav class="rounded container-md navbar navbar-light bg-e7e7e7">
       <div class="container-fluid">
         <div class="d-flex justify-content-start gap-2 align-items-center">
-          <img
-            class="avatar-size"
-            :src="`https://api.dicebear.com/5.x/big-smile/png?seed=${name}`"
-            alt=""
-          />
-          <a class="navbar-brand" href="#">DadJoke </a>
+          <img class="avatar-size" :src="genSeeds()" alt="" />
+          <a class="navbar-brand text-black" href="#">DadJokes </a>
         </div>
 
         <button
@@ -46,11 +41,16 @@ const avatarUrl = () => {};
             class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
             style="--bs-scroll-height: 100px"
           >
-            <li class="fw-light my-20">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              nemo possimus laboriosam aliquid saepe harum minus iste,
-              repudiandae sapiente nesciunt debitis reprehenderit doloribus
-              pariatur itaque quas natus dignissimos cupiditate praesentium?
+            <li style="font-size: 15px" class="fw-light my-2 mx-4">
+              <b>Applcation name:</b> Dadjokes Generator <br />
+              <b>Application playground:</b> Generator randoms jokes with limit
+              at 50 jokes per days. <br />
+              <b>API Using:</b> Dadjokes and DiceBear API <br />
+              <b>
+                **ผลงานชี้นนี้จำทำเพื่อเสนออาจาร์ย อาจารย์อรรถวิท ชังคมานนท์
+                รายวิชาการพัฒนาโปรแกรมประยุกต์บนเว็บ</b
+              > <br>
+              <b>นายไตรภาค สิทธิแก้ว 6404101318</b>
             </li>
           </ul>
         </div>
